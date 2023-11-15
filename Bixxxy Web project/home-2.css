@@ -1,0 +1,453 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow: none;
+  font-family: "Poppins", sans-serif;
+}
+a {
+  text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+:root {
+  --text-size: 1rem;
+  --sectionText-size: 1.1rem;
+  --headingText-size: 2.8rem;
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url(Images/background-2.jpg);
+  background-size: cover;
+  background-position: center;
+  scroll-snap-align: start;
+  scroll-snap-align: start;
+}
+
+/*---navbar---*/
+
+.navbar-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  padding: 20px 0;
+}
+
+.navbar {
+  width: 85%;
+  margin: auto;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 120px;
+  cursor: pointer;
+}
+
+.navbar ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  position: relative;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+}
+
+.navbar ul li::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  background: #318ffbea;
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+  transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+  width: 100%;
+}
+
+nav ul li:active::after {
+  opacity: 0.8;
+}
+
+.menu-btn {
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: none;
+}
+
+.menu-btn:active {
+  opacity: 0.5;
+}
+
+.login {
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  width: 100px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+.login:hover {
+  border-color: #318ffbac;
+}
+
+.login:active {
+  border-color: lightgreen;
+}
+
+aside {
+  display: none;
+}
+
+/* banner content */
+.content {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: white;
+}
+
+.content h1 {
+  font-size: var(--headingText-size);
+  margin-top: 80px;
+}
+
+.content p {
+  margin: 20px auto;
+  font-weight: 300;
+  line-height: 25px;
+  width: 700px;
+  font-size: var(--text-size);
+}
+
+.p-1 {
+  display: none;
+}
+
+button {
+  width: 200px;
+  padding: 15px 0;
+  text-align: center;
+  margin: 20px 10px;
+  border-radius: 25px;
+  font-weight: 700;
+  border: 2px solid #318ffbac;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+span {
+  background: #318ffbad;
+  height: 100%;
+  width: 0;
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+button:hover span {
+  width: 100%;
+}
+
+button:active span {
+  opacity: 0.7;
+}
+
+/*--sections--*/
+
+section {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url(Images/digital\ wallet.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  scroll-snap-align: start;
+}
+
+.section-content {
+  position: absolute;
+  top: 29%;
+  left: 7%;
+}
+
+.section-content h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.section-content p {
+  color: white;
+  width: 750px;
+  font-size: var(--sectionText-size);
+  line-height: 28px;
+  margin-bottom: 40px;
+  font-weight: 200;
+}
+
+.content-2 {
+  position: absolute;
+  top: 34%;
+}
+
+.learn-more {
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  padding: 13px;
+  text-align: center;
+  width: 140px;
+  border-radius: 50px;
+  display: block;
+  font-weight: 300;
+}
+
+.learn-more:hover {
+  border-color: #318ffbac;
+}
+
+.learn-more:active {
+  border-color: lightgreen;
+}
+
+.section-2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url(Images/vision.jpg);
+}
+
+.phone-content {
+  display: none;
+}
+
+/*---footer---*/
+
+.footer {
+  width: 100%;
+  height: 15vh;
+  background-color: rgb(23, 23, 23);
+  background-image: none;
+  text-align: center;
+  padding-top: 22px;
+  scroll-snap-align: start;
+}
+
+.footer p {
+  font-size: 14px;
+  color: rgb(157, 157, 157);
+  font-weight: 200;
+}
+
+.icons img {
+  color: white;
+  margin-right: 28px;
+  margin-left: 28px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+/* media queries */
+
+@media screen and (max-width: 900px) {
+  /* ---side-bar---  */
+
+  aside {
+    position: fixed;
+    transition: right 0.4s ease;
+    right: 0;
+    width: 180px;
+    background-color: white;
+    padding: 80px 50px;
+    z-index: 100;
+    height: 100vh;
+  }
+
+  aside a {
+    color: inherit;
+    text-decoration: none;
+    padding: 28px 0;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+  }
+
+  .close-btn {
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    font-weight: 100;
+    cursor: pointer;
+  }
+
+  .close-btn:active {
+    background-color: rgba(180, 180, 180, 0.279);
+    border-radius: 50px;
+  }
+
+  .backdrop {
+    display: none;
+    height: 100vh;
+    position: fixed;
+    z-index: 3;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.28);
+    backdrop-filter: blur(2px);
+  }
+
+  /* banner */
+  .banner {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+      url(Images/phone-1.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  .navbar ul li {
+    display: none;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  .menu-btn {
+    display: inline-block;
+    font-size: 13px;
+  }
+
+  .login {
+    display: none;
+  }
+
+  .content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 55%;
+  }
+
+  .content h1 {
+    display: none;
+  }
+
+  .content p {
+    display: none;
+  }
+
+  .content .p-1 {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    line-height: 45px;
+    font-size: 32px;
+    font-weight: 300;
+  }
+
+  button {
+    width: 150px;
+    border-radius: 8px;
+    font-size: var(--text-size);
+    border: none;
+    background-color: #449afcda;
+  }
+
+  button:active {
+    opacity: 0.7;
+  }
+
+  span {
+    display: none;
+  }
+
+  /* section */
+
+  section {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+      url(Images/phone-2.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+
+  .section-content {
+    display: none;
+  }
+
+  .section-2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+      url(Images/phone-3.jpg);
+  }
+
+  .phone-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .phone-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .p-2 {
+    text-align: center;
+    color: white;
+    width: 300px;
+    line-height: 45px;
+    font-weight: 100;
+    font-size: 20px;
+    font-weight: 300;
+    margin-bottom: 30px;
+  }
+
+  .phone-learn {
+    background: none;
+    font-size: medium;
+    font-weight: 100;
+    border: 1px solid white;
+  }
+
+  .phone-learn:active {
+    opacity: 0.5;
+  }
+}
